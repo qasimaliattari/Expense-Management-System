@@ -9,7 +9,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete' && isset($_GET['id']) && $_GE
    
 }
 
-$res = mysqli_query($con,"select * from category");
+$res = mysqli_query($con,"select * from category order by id desc");
 
 ?>
 
