@@ -29,6 +29,18 @@ function checkUser(){
        redirect('login.php');
     }
 }
+function getCategory(){
+    global $con;    
+    $res = mysqli_query($con,"select * from category order by name asc");
+
+    $html = '<select required name="category_id">';
+    $html .= '<option value="">Select Category</option>';
+            while($row = mysqli_fetch_assoc($res)){
+            $html .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+            }
+    $html .= '</select>';
+    return $html;
+}
 
 
 
