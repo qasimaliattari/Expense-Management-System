@@ -88,30 +88,30 @@ include ('functions.php');
             </li>
             <li>
               <a href="dashboard.php" aria-expanded="false">
-                <i class="flaticon-025-dashboard"></i>
+                <!-- <i class="flaticon-025-dashboard"></i> -->
                 <span class="nav-text">Dashboard</span>
               </a>
             </li>
             <li>
               <a href="category.php" aria-expanded="false">
-                <i class="fa-regular fa-rectangle-list"></i>
+                <!-- <i class="fa-regular fa-rectangle-list"></i> -->
                 <span class="nav-text">Category</span>
               </a>
             </li>
             <li>
               <a href="expense.php" aria-expanded="false">
-                <i class="fa-solid fa-wallet"></i>
+                <!-- <i class="fa-solid fa-wallet"></i> -->
                 <span class="nav-text">Expense</span>
               </a>
             </li>
-            <!-- <li><a href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-086-star"></i>
-							<span class="nav-text"></span>
+            <li><a href="reports.php" aria-expanded="false">
+							<!-- <i class=""></i> -->
+							<span class="nav-text">Reports</span>
 						</a>
-                    </li> -->
+            </li>
             <li>
               <a href="logout.php" aria-expanded="false">
-                <i class="fa-solid fa-right-from-bracket"></i>
+                <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
                 <span class="nav-text">Logout</span>
               </a>
             </li>
