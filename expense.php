@@ -9,7 +9,9 @@ if(isset($_GET['type']) && $_GET['type']=='delete' && isset($_GET['id']) && $_GE
    
 }
 
-$res = mysqli_query($con,"select * from expense");
+$res = mysqli_query($con,"select expense.* , category.name from expense,category
+                          where expense.category_id = category.id
+                          order by expense.expense_date asc");
 
 ?>
 
@@ -30,7 +32,7 @@ $res = mysqli_query($con,"select * from expense");
     <span style="--i: 10">.</span>
   </div>
 </div>
-       <!--*******************
+    <!--*******************
 			Preloader end
 		********************-->
 
@@ -74,7 +76,7 @@ $res = mysqli_query($con,"select * from expense");
      ?>
       <tr>
         <td><?php echo $row['id'];?></td>
-        <td><?php echo $row['category_id'];?></td>
+        <td><?php echo $row['name'];?></td>
         <td><?php echo $row['item'];?></td>
         <td><?php echo $row['price'];?></td>
         <td><?php echo $row['details'];?></td>
