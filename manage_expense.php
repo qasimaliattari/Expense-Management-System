@@ -77,14 +77,13 @@ checkUser();
 </head>
 <body>
         <?php
-        $msg = "";
         if(isset($_POST['submit'])){
             $category_id = get_safe_value($_POST['category_id']);
             $item = get_safe_value($_POST['item']);
             $price = get_safe_value($_POST['price']);
             $details = get_safe_value($_POST['details']);
             $expense_date = get_safe_value($_POST['expense_date']);
-            $added_on = date('y m d h:i:s');
+            $added_on = date('y-m-d h:i:s');
 
             $type = "add";
             $sub_sql = "";
@@ -98,7 +97,7 @@ checkUser();
             $sql = "insert into expense (category_id , item, price , details , added_on , expense_date ) 
                     values('$category_id','$item','$price','$details','$added_on','$expense_date')";
                 if(isset($_GET['id']) && $_GET['id']>0){
-                $sql = "Update category set category_id = '$category_id' , item = '$item' , price = '$price' , details = '$details' 
+                $sql = "Update expense set category_id = '$category_id' , item = '$item' , price = '$price' , details = '$details' 
                         , expense_date = '$expense_date' where id = $id";
             }
                 mysqli_query($con,$sql);
@@ -108,18 +107,16 @@ checkUser();
         
         ?>
         <div class="container">
-        <div class="sign-in-container">
+          <div class="sign-in-container">
             <form method="post">
-              <?php echo getCategory() ?>
-            <input type="date" placeholder="Expense date" name="expense_date" required value="<?php echo $expense_date ?>"><br>
-            <input type="text" placeholder="Price" name="price" required value="<?php echo $price ?>">
-            <input type="text" placeholder="Item" name="item" required value="<?php echo $item ?>"><br>
-            <textarea placeholder="Details" name="details" rows="4" cols="50" required><?php echo $details ?></textarea><br>
-            <button class="form_btn" name="submit"><?php echo $button ?></button>
-            
-            </form> 
-            <?php echo $msg; ?>
-        </div>
+              <?php echo getCategory($category_id) ?>
+              <input type="date" placeholder="Expense date" name="expense_date" required value="<?php echo $expense_date ?>"><br>
+              <input type="text" placeholder="Price" name="price" required value="<?php echo $price ?>">
+              <input type="text" placeholder="Item" name="item" required value="<?php echo $item ?>"><br>
+              <textarea placeholder="Details" name="details" rows="4" cols="50" required><?php echo $details ?></textarea><br>
+              <button class="form_btn" name="submit"><?php echo $button ?></button>
+             </form> 
+          </div>
         </div>
   
 </body>
