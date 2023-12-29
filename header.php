@@ -10,7 +10,7 @@ include ('functions.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- PAGE TITLE HERE -->
-    <title>EMS_Dashboard</title>
+    <title>EMS Application</title>
     <!-- Style css -->
     <link
       rel="stylesheet"
@@ -32,7 +32,7 @@ include ('functions.php');
             Nav header start
         ***********************************-->
       <div class="nav-header">
-        <a href="index.html" class="brand-logo">
+        <a href="" class="brand-logo">
           <svg class="logo-abbr" width="53" height="53" viewBox="0 0 53 53">
             <path
               class="svg-logo-primary-path"
@@ -52,7 +52,7 @@ include ('functions.php');
             height="33px"
             style="font-size: 30px"
           >
-            Admin
+            EMS
           </p>
         </a>
         <div class="nav-control">
