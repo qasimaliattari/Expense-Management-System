@@ -72,10 +72,6 @@ checkUser();
             Header end ti-comment-alt
         ***********************************-->
 
-<head>
-<link rel="stylesheet" href="css/manageexpense.css">
-</head>
-<body>
         <?php
         if(isset($_POST['submit'])){
             $category_id = get_safe_value($_POST['category_id']);
@@ -119,7 +115,7 @@ checkUser();
           </div>
         </div>
   
-</body>
+
 
 
 
