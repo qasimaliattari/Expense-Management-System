@@ -30,6 +30,12 @@
     <script src="js/custom.min.js"></script>
 	<script src="js/dlabnav-init.js"></script>
 	<script src="js/demo.js"></script>
+    <script>
+        function change_cat() {
+            var category_id = document.getElementById('category_id').value;
+            window.location.href='?category_id='+category_id;
+        }
+    </script>
 </body>
 
 </html>
