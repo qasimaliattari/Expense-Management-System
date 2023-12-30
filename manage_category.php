@@ -63,10 +63,6 @@ checkUser();
             Header end ti-comment-alt
         ***********************************-->
 
-<head>
-<link rel="stylesheet" href="css/managecategory.css">
-</head>
-<body>
         <?php
         $msg = "";
         if(isset($_POST['submit'])){
@@ -106,7 +102,6 @@ checkUser();
         </div>
         </div>
   
-</body>
 
 
 
