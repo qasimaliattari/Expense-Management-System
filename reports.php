@@ -9,8 +9,16 @@ if(isset($_GET['category_id']) && $_GET['category_id']>0){
 
   $cat_id = get_safe_value($_GET['category_id']);
   $sub_sql = "and category.id = $cat_id";
+}
+
+if(isset($_GET['category_id'])){
   $from = get_safe_value($_GET['from']);
-  $to = get_safe_value($_GET['to']);
+}
+if(isset($_GET['to'])){
+$to = get_safe_value($_GET['to']);  
+}
+if($from!='' && $to!=''){
+  $sub_sql .= " and expense.expense_date between '$from' and '$to'"; 
 }
 
 $res = mysqli_query($con,"select 
@@ -60,12 +68,14 @@ $res = mysqli_query($con,"select
         ***********************************-->
 
 <div class="container">
-  <form action = "get">
-    <input type="date" name="from" required value="<?php echo $from ?>">
-    <input type="date" name="to" required value="<?php echo $to ?>"><br>
+  <form method ="get">
+    <input type="date" name="from" required value="<?php echo $from ?>"> <b>-></b>
+    <input type="date" name="to" required value="<?php echo $to ?>">
     <?php echo getCategory( $cat_id , 'reports') ?>
     <button  class="form_btn" name="submit">Submit</button>
-</form>
+  </form>
+  <a href="reports.php"><button  class="form_btn">Reset</button></a>
+
 
 <?php if(mysqli_num_rows($res)>0){  ?>
   
@@ -96,7 +106,7 @@ $res = mysqli_query($con,"select
   </table>
   <?php }
      else{
-		echo "no data found ";
+		echo "<b>no data found</b> ";
 	 }
    ?>
   
