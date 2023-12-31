@@ -58,7 +58,7 @@
 								<div class="card progress-card">
 									<div class="card-body d-flex">
 										<div class="me-auto">
-											<h4 class="card-title">Total Transactions</h4>
+											<h4 class="card-title">Today's Expense	</h4>
 											<div class="d-flex align-items-center">
 												<h2 class="fs-38 mb-0">98k</h2>
 											</div>
@@ -69,7 +69,7 @@
 							<div class="col-md-4">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title">Invoice Remaining</h4>
+										<h4 class="card-title">Yesterday's Expense</h4>
 										<div class="d-flex align-items-center">
 											<h2 class="fs-38">854</h2>
 										</div>
@@ -79,7 +79,7 @@
 							<div class="col-md-4">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title">Invoice Remaining</h4>
+										<h4 class="card-title">This week Expense</h4>
 										<div class="d-flex align-items-center">
 											<h2 class="fs-38">854</h2>
 										</div>
@@ -91,7 +91,7 @@
 							<div class="col-sm-4">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title mt-2">Invoice Sent</h4>
+										<h4 class="card-title mt-2">This Month Expense</h4>
 										<div class="d-flex align-items-center mt-3 mb-2">
 											<h2 class="fs-38 mb-0 me-3">456</h2>
 										</div>
@@ -101,7 +101,7 @@
 							<div class="col-sm-4">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title mt-2">Invoice Compeleted</h4>
+										<h4 class="card-title mt-2">This Year Expense</h4>
 										<div class="d-flex align-items-center mt-3 mb-2">
 											<h2 class="fs-38 mb-0 me-3">1467</h2>
 										</div>
@@ -111,7 +111,7 @@
 							<div class="col-sm-4">
 								<div class="card">
 									<div class="card-body">
-										<h4 class="card-title mt-2">Invoice Compeleted</h4>
+										<h4 class="card-title mt-2">Total Expense</h4>
 										<div class="d-flex align-items-center mt-3 mb-2">
 											<h2 class="fs-38 mb-0 me-3">1467</h2>
 										</div>
