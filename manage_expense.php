@@ -7,7 +7,7 @@ checkUser();
     $item = "";
     $price = "";
     $details = "";
-    $expense_date = "";
+    $expense_date = date('Y-m-d');
 
     if(isset($_GET['id']) && $_GET['id']>0){
         $label = "EDIT"; 
