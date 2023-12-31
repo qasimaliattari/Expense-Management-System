@@ -66,7 +66,7 @@ include('functions.php');
     </div>
   </div>
 
-  <script src="js/login&regis.js"></script>
+  <script src="js/login_regis.js"></script>
 </body>
 </html>
 
