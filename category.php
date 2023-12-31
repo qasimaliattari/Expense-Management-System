@@ -85,7 +85,7 @@ $res = mysqli_query($con,"select * from category order by id desc");
   </table>
   <?php }
      else{
-		echo "no data found ";
+		echo "<b>no data found</b> ";
 	 }
    ?>
   
