@@ -19,8 +19,8 @@ include ('functions.php');
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="css/style1.css" rel="stylesheet" />
-    <link href="css/table.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/projecttable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/managecategory.css">
     <link rel="stylesheet" href="css/manageexpense.css">
   </head>
