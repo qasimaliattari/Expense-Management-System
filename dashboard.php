@@ -55,68 +55,66 @@
 					<div class="col-xl-12 col-xxl-12">
 						<div class="row">
 							<div class="col-md-4" st>
-								<div class="card progress-card">
-									<div class="card-body d-flex">
-										<div class="me-auto">
-											<h4 class="card-title">Today's Expense	</h4>
+									<div class="card progress-card">
+										<div class="card-body d-flex">
+											<div class="me-auto">
+												<h4 class="card-title">Today's Expense</h4>
+												<div class="d-flex align-items-center">
+													<h2 class="fs-38 mb-0"><?php echo getDashboard('today'); ?></h2>
+												</div>
+											</div>		
+										</div>
+									</div>
+							</div>
+							<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title">Yesterday's Expense</h4>
 											<div class="d-flex align-items-center">
-												<h2 class="fs-38 mb-0">98k</h2>
+												<h2 class="fs-38"><?php echo getDashboard('yesterday'); ?></h2>
 											</div>
-										</div>		
+										</div>
 									</div>
-								</div>
 							</div>
 							<div class="col-md-4">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title">Yesterday's Expense</h4>
-										<div class="d-flex align-items-center">
-											<h2 class="fs-38">854</h2>
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title">This week Expense</h4>
+											<div class="d-flex align-items-center">
+												<h2 class="fs-38"><?php echo getDashboard('week');?></h2>
+											</div>
 										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title">This week Expense</h4>
-										<div class="d-flex align-items-center">
-											<h2 class="fs-38">854</h2>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							
-							<div class="col-sm-4">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title mt-2">This Month Expense</h4>
-										<div class="d-flex align-items-center mt-3 mb-2">
-											<h2 class="fs-38 mb-0 me-3">456</h2>
-										</div>
-									</div>
-								</div>
+									</div>	
 							</div>
 							<div class="col-sm-4">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title mt-2">This Year Expense</h4>
-										<div class="d-flex align-items-center mt-3 mb-2">
-											<h2 class="fs-38 mb-0 me-3">1467</h2>
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title mt-2">This Month Expense</h4>
+											<div class="d-flex align-items-center mt-3 mb-2">
+												<h2 class="fs-38 mb-0 me-3"><?php echo getDashboard('month');?></h2>
+											</div>
 										</div>
 									</div>
-								</div>
 							</div>
 							<div class="col-sm-4">
-								<div class="card">
-									<div class="card-body">
-										<h4 class="card-title mt-2">Total Expense</h4>
-										<div class="d-flex align-items-center mt-3 mb-2">
-											<h2 class="fs-38 mb-0 me-3">1467</h2>
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title mt-2">This Year Expense</h4>
+											<div class="d-flex align-items-center mt-3 mb-2">
+												<h2 class="fs-38 mb-0 me-3"><?php echo getDashboard('year');?></h2>
+											</div>
+										</div>
+									</div>	
+							</div>
+							<div class="col-sm-4">
+									<div class="card">
+										<div class="card-body">
+											<h4 class="card-title mt-2">Total Expense</h4>
+											<div class="d-flex align-items-center mt-3 mb-2">
+												<h2 class="fs-38 mb-0 me-3"><?php echo getDashboard('total');?></h2>
+											</div>
 										</div>
 									</div>
-								</div>
 							</div>
 						</div>
 					</div>
