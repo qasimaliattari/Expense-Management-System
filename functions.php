@@ -51,6 +51,40 @@ function getCategory($category_id = '' , $page=''){
     $html .= '</select>';
     return $html;
 }
+function getDashboard($type){
+    global $con;  
+    $today = date('Y-m-d'); 
+    if($type =='today'){
+        $sub_sql = " where expense_date='$today'";
+        $from = $today;
+        $to = $today;
+    }elseif($type == 'yesterday'){
+            $yesterday =date('Y-m-d',strtotime('yesterday')); 
+             $sub_sql = " where expense_date='$yesterday'";
+             $from = $yesterday;
+             $to = $yesterday;
+    }elseif($type == 'week' || $type == 'month' || $type == 'year'){
+        $from =date('Y-m-d',strtotime("-1 $type")); 
+         $sub_sql = " where expense_date between '$from' and '$today' ";
+         $to = $today;
+    }else{
+        $sub_sql = "";
+        $from ='';
+        $to ='';
+    }
+    $res = mysqli_query($con,"select 
+                          sum(price) as price from expense $sub_sql");
+
+    $row = mysqli_fetch_assoc($res);
+    $p = 0;
+    $link="";
+    if($row['price']>0){
+        $p = $row['price'];
+        $link = "<a style='text-decoration:none;' href='dashboard_report.php?from=".$from."&to=".$to."' target='_blank'><h4>Details</h4></a>";  
+    }
+    return $p.$link;
+   
+}
 
 
 
