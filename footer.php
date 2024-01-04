@@ -1,12 +1,12 @@
        <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-		
+        <!-- <div class="footer">        
+
             <div class="copyright">
-                <p>© Designed &amp; by <a href="#" target="_blank">Programmer</a> 2023</p>
-            </div>
-        </div>
+                    <p>© Designed &amp; by <a href="#" target="_blank">Programmer</a> 2023</p>
+                </div>
+        </div> -->
         <!--**********************************
             Footer end
         ***********************************-->
