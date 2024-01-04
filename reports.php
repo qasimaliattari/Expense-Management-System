@@ -11,7 +11,7 @@ if(isset($_GET['category_id']) && $_GET['category_id']>0){
   $sub_sql = "and category.id = $cat_id";
 }
 
-if(isset($_GET['category_id'])){
+if(isset($_GET['from'])){
   $from = get_safe_value($_GET['from']);
 }
 if(isset($_GET['to'])){
