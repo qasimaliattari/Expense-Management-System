@@ -4,74 +4,61 @@ include('functions.php');
 ?>
 
 <!DOCTYPE html>
-<head>
-  <title>EMS_login</title>
-  <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="css/signin.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+
 
 <?php
- 
- if(isset($_POST['signin'])){
-    $username = get_safe_value($_POST['username']);
-    $password = get_safe_value($_POST['password']);
-    $res = mysqli_query($con,"select * from users where username = '$username' and password = '$password'");
+    $msg = "";
+    if(isset($_POST['signin'])){
+        $username = get_safe_value($_POST['username']);
+        $password = get_safe_value($_POST['password']);
+        $res = mysqli_query($con,"select * from users where username = '$username' and password = '$password'");
 
-    if(mysqli_num_rows($res)>0){
-      $row = mysqli_fetch_assoc($res);
-      $_SESSION['UID'] = $row['id'];
-      $_SESSION['UNAME'] = $row['username']; 
-      redirect('dashboard.php');
-    }else{
-      echo "please enter valid values";
+        if(mysqli_num_rows($res)>0){
+        $row = mysqli_fetch_assoc($res);
+        $_SESSION['UID'] = $row['id'];
+        $_SESSION['UNAME'] = $row['username']; 
+        redirect('dashboard.php');
+        }else{
+        $msg = "please enter valid username and password";
+        }
+
     }
-
- }
 ?>
-
-
-
-  <div class="wrapper">
-    <div class="container">
-      
-      <div class="sign-up-container">
-        <form>
-          <h1>Create Account</h1>
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-          <input type="password" placeholder="Password">
-          <button class="form_btn">Sign Up</button>
-        </form>
+      <div class="content">
+         <div class="text">
+            Expense Management System
+         </div>
+         <form method="post" action="#">
+            <div class="field">
+               <input type="text" name="username" required>
+               <span class="fas fa-user"></span>
+               <label>Username</label>
+            </div>
+            <div class="field">
+               <input type="password" name="password" required>
+               <span class="fas fa-lock"></span>
+               <label>Password</label>
+            </div>
+            <!-- <div class="forgot-pass">
+               <a href="#">Forgot Password?</a>
+            </div> -->
+            <button name="signin">Sign in</button>
+            <h5 style="color:red;"><?php echo $msg;?></h5>
+            <div class="sign-up">
+               Not a member?
+               <a href="signup.php">signup now</a>
+            </div>
+         </form>
       </div>
-      <div class="sign-in-container">
-        <form method="post">
-          <h1>Sign In</h1>
-          <input type="text" placeholder="Username" name="username" required>
-          <input type="password" placeholder="Password" name="password" required>
-          <button class="form_btn" name="signin">SignIn</button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay-left">
-          <h1>Welcome Back</h1>
-          <p>To keep connected with us please login with your personal info</p>
-          <button id="signIn" class="overlay_btn">Sign In</button>
-        </div>
-        <div class="overlay-right">
-          <h1>Hello, Friend</h1>
-          <p>Enter your personal details and start journey with us</p>
-          <button id="signUp" class="overlay_btn">Sign Up</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/login_regis.js"></script>
-</body>
+   </body>
 </html>
-
-
-
 
 
 
