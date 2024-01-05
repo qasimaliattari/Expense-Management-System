@@ -19,6 +19,9 @@ checkUser();
         $price = $row['price'];
         $details = $row['details'];
         $expense_date = $row['expense_date'];
+        if($row['added_by'] != $_SESSION['UID']){
+          redirect('expense');
+        }
     }
     $button = "Submit";
     if(isset($_GET['id']) && $_GET['id']>0){
@@ -89,9 +92,9 @@ checkUser();
                 
             }
             
-
-            $sql = "insert into expense (category_id , item, price , details , added_on , expense_date ) 
-                    values('$category_id','$item','$price','$details','$added_on','$expense_date')";
+            $added_by = $_SESSION['UID'];
+            $sql = "insert into expense (category_id , item, price , details , added_on , expense_date , added_by) 
+                    values('$category_id','$item','$price','$details','$added_on','$expense_date','$added_by')";
                 if(isset($_GET['id']) && $_GET['id']>0){
                 $sql = "Update expense set category_id = '$category_id' , item = '$item' , price = '$price' , details = '$details' 
                         , expense_date = '$expense_date' where id = $id";
