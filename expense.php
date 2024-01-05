@@ -10,7 +10,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete' && isset($_GET['id']) && $_GE
 }
 
 $res = mysqli_query($con,"select expense.* , category.name from expense,category
-                          where expense.category_id = category.id
+                          where expense.category_id = category.id and expense.added_by='".$_SESSION['UID']."'
                           order by expense.expense_date asc");
 
 ?>
