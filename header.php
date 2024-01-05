@@ -73,7 +73,7 @@ include ('functions.php');
       <div class="dlabnav">
         <div class="dlabnav-scroll">
           <ul class="metismenu" id="menu">
-            <li class="dropdown header-profile">
+            <!-- <li class="dropdown header-profile">
               <a
                 class="nav-link"
                 href="javascript:void(0);"
@@ -86,33 +86,33 @@ include ('functions.php');
                   <small class="text-end font-w400">qasimaly18@gmail.com</small>
                 </div>
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="dashboard.php" aria-expanded="false">
-                <!-- <i class="flaticon-025-dashboard"></i> -->
+              <i class="fa fa-dashboard"></i>
                 <span class="nav-text">Dashboard</span>
               </a>
             </li>
             <li>
               <a href="category.php" aria-expanded="false">
-                <!-- <i class="fa-regular fa-rectangle-list"></i> -->
+                <i class="fa-regular fa-rectangle-list"></i>
                 <span class="nav-text">Category</span>
               </a>
             </li>
             <li>
               <a href="expense.php" aria-expanded="false">
-                <!-- <i class="fa-solid fa-wallet"></i> -->
+              <i class='fas fa-wallet'></i>
                 <span class="nav-text">Expense</span>
               </a>
             </li>
             <li><a href="reports.php" aria-expanded="false">
-							<!-- <i class=""></i> -->
+            <i class="fa fa-bar-chart"></i>
 							<span class="nav-text">Reports</span>
 						</a>
             </li>
             <li>
               <a href="logout.php" aria-expanded="false">
-                <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
+                <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="nav-text">Logout</span>
               </a>
             </li>
