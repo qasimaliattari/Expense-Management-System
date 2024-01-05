@@ -23,7 +23,7 @@ if($from!='' && $to!=''){
 
 $res = mysqli_query($con,"select 
                           sum(expense.price) as price , category.name from expense,category
-                          where expense.category_id = category.id $sub_sql
+                          where expense.category_id = category.id and expense.added_by='".$_SESSION['UID']."' $sub_sql
                           group by expense.category_id");
 
 ?>
