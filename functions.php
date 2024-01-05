@@ -32,7 +32,7 @@ function checkUser(){
 
 function getCategory($category_id = '' , $page=''){
     global $con;    
-    $res = mysqli_query($con,"select * from category order by name asc");
+    $res = mysqli_query($con,"select * from category where added_by='".$_SESSION['UID']."' order by name asc ");
     
     $fun = "required";  
     if($page == 'reports'){
