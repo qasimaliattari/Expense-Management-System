@@ -55,17 +55,17 @@ function getDashboard($type){
     global $con;  
     $today = date('Y-m-d'); 
     if($type =='today'){
-        $sub_sql = " where expense_date='$today'";
+        $sub_sql = " and expense_date='$today'";
         $from = $today;
         $to = $today;
     }elseif($type == 'yesterday'){
             $yesterday =date('Y-m-d',strtotime('yesterday')); 
-             $sub_sql = " where expense_date='$yesterday'";
+             $sub_sql = " and expense_date='$yesterday'";
              $from = $yesterday;
              $to = $yesterday;
     }elseif($type == 'week' || $type == 'month' || $type == 'year'){
         $from =date('Y-m-d',strtotime("-1 $type")); 
-         $sub_sql = " where expense_date between '$from' and '$today' ";
+         $sub_sql = " and expense_date between '$from' and '$today' ";
          $to = $today;
     }else{
         $sub_sql = "";
@@ -73,7 +73,7 @@ function getDashboard($type){
         $to ='';
     }
     $res = mysqli_query($con,"select 
-                          sum(price) as price from expense $sub_sql");
+                          sum(price) as price from expense where added_by='".$_SESSION['UID']."' $sub_sql");
 
     $row = mysqli_fetch_assoc($res);
     $p = 0;
