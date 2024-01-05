@@ -10,6 +10,9 @@ checkUser();
         $res = mysqli_query($con,"select * from category where id = $id ");
         $row = mysqli_fetch_assoc($res);
         $category = $row['name'];
+        if($row['added_by'] != $_SESSION['UID']){
+          redirect('category');
+        }
     }
     $button = "Submit";
     if(isset($_GET['id']) && $_GET['id']>0){
@@ -77,10 +80,11 @@ checkUser();
             
 
             $res = mysqli_query($con,"select * from category where name = '$categoryname' $sub_sql  ");
+            $added_by = $_SESSION['UID'];
             if(mysqli_num_rows($res)>0){
                $msg = "Category Already exists";
             }else{
-                $sql = "insert into category (name) values('$categoryname')";
+                $sql = "insert into category (name,added_by) values('$categoryname' , '$added_by')";
                 if(isset($_GET['id']) && $_GET['id']>0){
                 $sql = "Update category set name = '$categoryname' where id = $id";
             }
