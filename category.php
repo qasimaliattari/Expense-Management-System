@@ -8,9 +8,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete' && isset($_GET['id']) && $_GE
    mysqli_query($con,"delete from category where id=$id");
    
 }
-
-$res = mysqli_query($con,"select * from category order by id desc");
-
+$res = mysqli_query($con,"select * from category where added_by='".$_SESSION['UID']."' order by id desc");
 ?>
 
        <!--*******************
