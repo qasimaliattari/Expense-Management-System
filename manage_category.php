@@ -79,7 +79,7 @@ checkUser();
             }
             
 
-            $res = mysqli_query($con,"select * from category where name = '$categoryname' $sub_sql  ");
+            $res = mysqli_query($con,"select * from category where name = '$categoryname' added_by='".$_SESSION['UID']."' $sub_sql");
             $added_by = $_SESSION['UID'];
             if(mysqli_num_rows($res)>0){
                $msg = "Category Already exists";
