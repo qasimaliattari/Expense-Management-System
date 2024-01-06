@@ -15,16 +15,22 @@ include('functions.php');
 
 
 <?php
-
-    
-    if(isset($_POST['signup'])){
-    $username2 = get_safe_value($_POST['username']);
-    $password2 = get_safe_value($_POST['password']);
-    $sql1 = mysqli_query($con,"insert into users (username , password)  values ('$username2' , '$password2')");
-    if($sql1){
-    redirect('signup.php');    
-    }
-    }
+   $msg = "";
+   if(isset($_POST['signup'])){
+      $username2 = get_safe_value($_POST['username']);
+      $password2 = get_safe_value($_POST['password']);
+      $sql = "select * from users where username = '$username2'";
+      $res = mysqli_query($con, $sql);
+      if(mysqli_num_rows($res) > 0){
+          $msg = "Username already exists ";
+      }else{
+          $sql1 = "insert into users (username, password) values ('$username2', '$password2')";
+          mysqli_query($con, $sql1);
+          header('Location: login.php');
+          exit();
+      }
+  }
+  
 ?>
       <div class="content">
          <div class="text">
@@ -47,6 +53,8 @@ include('functions.php');
                Yes a member?
                <a href="login.php">Login now</a>
             </div>
+            <h5 style="color:red;"><?php echo $msg;?></h5>
+
          </form>
       </div>
    </body>
